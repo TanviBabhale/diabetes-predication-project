@@ -31,3 +31,13 @@ if st.button("Predict"):
         st.error("⚠️ The patient is likely to have Diabetes.")
     else:
         st.success("✅ The patient is unlikely to have Diabetes.")
+        import os, pickle
+
+MODEL_PATH = "diabetes_model.pkl"
+
+if not os.path.exists(MODEL_PATH):
+    st.error("❌ Model file not found! Please check deployment.")
+else:
+    model = pickle.load(open(MODEL_PATH, "rb"))
+
+
