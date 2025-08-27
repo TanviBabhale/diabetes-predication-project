@@ -1,4 +1,5 @@
 # app.py
+import os
 import pickle
 import streamlit as st
 import numpy as np
@@ -39,5 +40,6 @@ if not os.path.exists(MODEL_PATH):
     st.error("❌ Model file not found! Please check deployment.")
 else:
     model = pickle.load(open(MODEL_PATH, "rb"))
+
 
 
